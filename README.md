@@ -1,7 +1,5 @@
 # AzureHoneyPot
 
-# PROJECTNAME
-
 ## Objective
 [Brief Objective - Remove this afterwards]
 
