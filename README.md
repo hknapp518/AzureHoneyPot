@@ -1,4 +1,4 @@
-# AzureHoneyPot
+# Azure Honeypot
 
 ## Objective
 [Brief Objective - Remove this afterwards]
