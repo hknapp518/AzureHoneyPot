@@ -1,31 +1,35 @@
 # Azure Honeypot
 
 ## Objective
-[Brief Objective - Remove this afterwards]
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+Get hands on experience connecting Azure Sentinel (SIEM) to an Azure Windows 10 VM acting as a honey pot. Observe live attacks (RDP Brute Force) from all over the world. Use a custom PowerShell script to connect to  IP Geolocation to pinpoint the exact location on Azure Sentinel Map and make a report.
 
 ### Skills Learned
-[Bullet Points - Remove this afterwards]
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+- Configuration with Azure Sentinel workbook.
+- Configuring Log Analytics Workspace in Azure to ingest custom logs containing geographic location.
+- Custom PowerShell script to extract metadata from Windows Event Viewer to be forwarded to third party API to extract 
+  geolocation data
+- Using third party API like IP Geolocation
+
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+- Microsoft Sentinel (SIEM) 
+- PowerShell
+- Log Analytics Workspace
+- IP Geolocation
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
 
 Example below.
 
-*Ref 1: Network Diagram*
+Step 1- When I first started up my VM honey pot, I was unable to ping my VM. So, I turned off all the firewalls and tried to ping it again, this time being successful. Knowing that is it now accepting ICMP traffic will help in attackers being able to scan my network making it a good target. 
+![able to ping my Azure VM with all of my firewalls turned off](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/5c6e126c-3e06-4cb8-9baf-998fe4dc4dcb)
+
+Step 2- I wanted to view the Event Security logs on my VM just to get used to what failed and successful logins look like
+![Failed login on purpose looking for event ID 4625 for failed login attempts]
+
+![Login to VM successful event ID 4624](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/6910167e-b896-4105-8204-979662fdc43a)
+![Failed login on purpose looking for event ID 4625 for failed login attempts](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/9b66f421-5255-4e9e-b2c6-999f625581c3)
