@@ -39,3 +39,14 @@ Step 3- Ran a PowerShell script to overnight to collect logs for failed RDP atte
 
 Step 4- Create a customized a log named "Failed_RDP_with_Geo_CL" in Log Analytics workspace. Let my script run overnight and woke up to the following.
 ![Let my Azure run overnight and woke up to these failed login attempts ](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/56cd0a42-0f4c-42ee-9e57-b5586a2806a5)
+
+Step 5- Created custom fields running the following script.
+![Script to seperat the logs into columns for easier viewing](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/5032fe5f-ff5d-4c57-a6bf-a5ca95fb33e3)
+
+Step 6- Customized the appropriate settings in "Map" settings.
+![Final map with all attacks](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/5032cc9a-c8c1-476b-8f51-eb60fbdda4be)
+
+
+Step 7- Final workbook report
+![Final edited map](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/7b54ccc0-f4f9-49f3-9c12-4e51860f645a)
+
