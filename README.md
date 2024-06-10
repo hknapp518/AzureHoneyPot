@@ -25,11 +25,11 @@ Get hands on experience connecting Azure Sentinel (SIEM) to an Azure Windows 10 
 
 
 
-Step 1- When I first started up my VM honey pot, I was unable to ping my VM. So, I turned off all the firewalls and tried to ping it again, this time being successful. Knowing that is it now accepting ICMP traffic will help in attackers being able to scan my network making it a good target. 
+Step 1- When I initially started up my VM honey pot, I encountered an issue where it did not respond to ping requests. To troubleshoot, I disabled all firewalls, after which I was able to successfully ping the VM. This means that the honey pot is now accepting ICMP traffic. While this resolves the initial problem, it also increases the attractiveness of the honey pot as a potential target for attackers, as they can now use it for network reconnaissance 
 
 ![able to ping my Azure VM with all of my firewalls turned off](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/5c6e126c-3e06-4cb8-9baf-998fe4dc4dcb)
 
-Step 2- I wanted to view the Event Security logs on my VM just to get used to what failed and successful logins look like
+Step 2- I wanted to review the Event Security logs on my VM to become familiar with the patterns of failed and successful login attempts. By doing so, I aim to develop a better understanding of the typical entries in these logs, which will help me recognize potential security issues or irregularities in the future
 
 ![Login to VM successful event ID 4624](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/6910167e-b896-4105-8204-979662fdc43a)
 ![Failed login on purpose looking for event ID 4625 for failed login attempts](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/9b66f421-5255-4e9e-b2c6-999f625581c3)
