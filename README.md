@@ -34,10 +34,10 @@ Step 2- I wanted to review the Event Security logs on my VM to become familiar w
 ![Login to VM successful event ID 4624](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/6910167e-b896-4105-8204-979662fdc43a)
 ![Failed login on purpose looking for event ID 4625 for failed login attempts](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/9b66f421-5255-4e9e-b2c6-999f625581c3)
 
-Step 3- Ran a PowerShell script to overnight to collect logs for failed RDP attempts and train the extract feature in Log Analytics Workspace. Also used an API key from IP Geolocation to get the coordinates from where the attacks were coming from.
+Step 3- I ran a PowerShell script overnight to gather logs for failed RDP attempts, aiming to collect valuable data on potential intrusion attempts. I utilized the extract feature in Log Analytics Workspace to efficiently extract and analyze relevant information from these logs. Additionally, I employed an API key from IP Geolocation to retrieve geographic coordinates corresponding to the origin of the attacks, enhancing my understanding of the geographic distribution of potential threats
 ![API ipgeolocation to insert into powershell script](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/db0af003-20de-4908-a718-5d49f6361269)
 
-Step 4- Create a customized a log named "Failed_RDP_with_Geo_CL" in Log Analytics workspace. Let my script run overnight and woke up to the following.
+Step 4- Created a customized a log named "Failed_RDP_with_Geo_CL" in Log Analytics workspace. Then I let my script run overnight and woke up to the following.
 ![Let my Azure run overnight and woke up to these failed login attempts ](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/56cd0a42-0f4c-42ee-9e57-b5586a2806a5)
 
 Step 5- Created custom fields running the following script.
