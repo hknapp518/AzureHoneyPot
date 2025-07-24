@@ -29,10 +29,12 @@ Step 1- When I initially started up my VM honey pot, I encountered an issue wher
 
 ![able to ping my Azure VM with all of my firewalls turned off](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/5c6e126c-3e06-4cb8-9baf-998fe4dc4dcb)
 
-Step 2- I wanted to review the Event Security logs on my VM to become familiar with the patterns of failed and successful login attempts. By doing so, I aim to develop a better understanding of the typical entries in these logs, which will help me recognize potential security issues or irregularities in the future
+Step 2- I wanted to review the Event Security logs on my VM to become familiar with the patterns of failed and successful login attempts. By doing so, I aim to develop a better understanding of the typical entries in these logs, which will help me recognize potential security issues or irregularities in the future. I used Microsoft Sentinel and KQL to monitor authentication activity on my honeypot virtual machine. I ran queries to detect repeated failed logon attempts from remote IP addresses targeting the VM, filtering for events with ten or more failures in the last five hours to identify potential brute-force attacks. I also queried for successful logon events during the same timeframe to determine if any unauthorized access had occurred.
 
 ![Login to VM successful event ID 4624](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/6910167e-b896-4105-8204-979662fdc43a)
 ![Failed login on purpose looking for event ID 4625 for failed login attempts](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/9b66f421-5255-4e9e-b2c6-999f625581c3)
+![Query to see if login attempts were successful](https://github.com/user-attachments/assets/123ec4f6-98fe-4905-ba32-fb3142f4001b)
+![Honeypot query failed login attempts](https://github.com/user-attachments/assets/358da08d-f3a7-4e5a-b15b-315871afb915)
 
 Step 3- I ran a PowerShell script overnight to gather logs for failed RDP attempts, aiming to collect valuable data on potential intrusion attempts. I utilized the extract feature in Log Analytics Workspace to efficiently extract and analyze relevant information from these logs. Additionally, I employed an API key from IP Geolocation to retrieve geographic coordinates corresponding to the origin of the attacks, enhancing my understanding of the geographic distribution of potential threats
 ![API ipgeolocation to insert into powershell script](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/db0af003-20de-4908-a718-5d49f6361269)
@@ -61,7 +63,6 @@ To enforce this policy across the environment, I assigned the built-in Azure Pol
 As a secure and scalable alternative to exposing RDP, I implemented Azure Bastion. Bastion allows browser-based RDP and SSH access through the Azure portal without exposing the VM to the public internet. This eliminates the need for public IP addresses and open RDP ports, aligning with zero trust architecture principles.
 
 This solution demonstrates how to implement secure access controls, reduce brute-force exposure, and enforce organization-wide standards using native Azure services.
-
 
 
 
