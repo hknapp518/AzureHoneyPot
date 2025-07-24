@@ -50,3 +50,18 @@ Step 6- Customized the appropriate settings in "Map" settings.
 Step 7- Final workbook report
 ![Final edited map](https://github.com/hknapp518/AzureHoneyPot/assets/125601731/7b54ccc0-f4f9-49f3-9c12-4e51860f645a)
 
+# **Locking Down RDP Access Using NSG, Azure Policy, and Bastion**
+
+To reduce the attack surface of an Azure virtual machine, I updated the associated Network Security Group (NSG) to block RDP access from the public internet. I retrieved my public IP address and created an inbound NSG rule that allows TCP traffic on port 3389 (RDP) only from my specific IP address, using a `/32` mask for exact matching.
+
+I verified that RDP access worked from my machine but was blocked from all other sources. Any existing rules that allowed RDP from `0.0.0.0/0` or `*` were removed or disabled.
+
+To enforce this policy across the environment, I assigned the built-in Azure Policy: “Audit VMs that allow RDP from the Internet.” I also created a custom Azure Policy that denies the creation of any NSG rule which allows inbound RDP from public IP ranges. This policy evaluates any rule targeting port 3389 with a source address of `0.0.0.0/0` or `*`, and blocks it.
+
+As a secure and scalable alternative to exposing RDP, I implemented Azure Bastion. Bastion allows browser-based RDP and SSH access through the Azure portal without exposing the VM to the public internet. This eliminates the need for public IP addresses and open RDP ports, aligning with zero trust architecture principles.
+
+This solution demonstrates how to implement secure access controls, reduce brute-force exposure, and enforce organization-wide standards using native Azure services.
+
+
+
+
